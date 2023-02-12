@@ -1,17 +1,23 @@
-const btn = document.getElementById('submit')
-const survey = document.getElementById('survey')
-const thanks = document.querySelector('.thanks')
-const numbers = document.querySelectorAll('.number')
-let score = 0
+const mobile = document.querySelector('.mobile')
+const input = document.querySelector('.input')
+const container = document.querySelector('.container')
+const submitBtn = document.querySelector('.submit')
+const buttons = document.querySelectorAll('.flex button');
+let activeBtn = null;
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (activeBtn) {
+        activeBtn.classList.remove('active');
+        activeBtn.style.backgroundColor = '';
+    }
+    btn.classList.add('active')
+    activeBtn = btn;
+    // when active button pressed, set input text to that number
+    input.textContent = `You selected ${btn.textContent} out of 5`
+  });
+});
 
-numbers.forEach(btn => btn.addEventListener('click', (e) => {
-    e.preventDefault()
-    score = btn.textContent
-}))
-
-btn.addEventListener('click', (e) => {
-    e.preventDefault()
-    document.getElementById('rating').textContent = score
-    survey.classList.add('hidden')
-    thanks.classList.toggle('hidden')
+submitBtn.addEventListener('click', () => {
+    container.style.display = 'none';
+    mobile.classList.add('active')
 })

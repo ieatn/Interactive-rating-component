@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
 :root {
     --Orange: hsl(25, 97%, 53%);
     --White: hsl(0, 0%, 100%);
@@ -15,113 +17,77 @@
     box-sizing: border-box;
 }
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-color: var(--Very-Dark-Blue);
-    display: grid;
-    place-items: center;
-    height: 100vh;
-}
-.card {
-    width: 350px;
-    height: 300px;
-    background-color: var(--Dark-Blue);
-    display: grid;
-    place-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 15px;
-}
-.card-body {
-    width: 90%;
-    gap: 1rem;
-    margin-left: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-.card h1 {
-    font-size: 1.5rem;
     font-family: var(--ff);
-    font-weight: var(--fw-h1);
-    color: var(--White);
-}
-.card p {
-    width: 90%;
-    font-size: 0.8rem;
-    font-family: var(--fw-p);
-    font-weight: var(--fw-p);
-    color: var(--Light-Grey);
-}
-.number {
-    font-weight: var(--fw-h1);
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 100%;
-    color: var(--Light-Grey);
-    background-color: hsl(214, 25%, 17%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.number:hover {
-    color: var(--White);
-    background-color: var(--Orange);
-}
-.number:active {
-    color: var(--White);
-    background-color: var(--Orange);
-    transition: transform 0.1s ease-in-out;
-}
-.numbers {
     font-size: 1rem;
-    font-family: var(--fw-h1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    color: var(--Medium-Grey);
 }
-#submit {
-    font-size: 0.8rem;
-    font-family: var(--ff);
+h1 {
     font-weight: var(--fw-h1);
-    width: 80%;
-    height: 40px;
-    border: none;
-    border-radius: 25px;
-    background-color: var(--Orange);
     color: var(--White);
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
-#submit:hover {
-    background-color: var(--White);
+p {
+    font-weight: var(--fw-p);
+}
+
+.container {
+    width: 400px;
+    max-width: 100%;
+    height: 450px;
+    background-color: var(--Dark-Blue);
+    border-radius: 2rem;
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+}
+.flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+button {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(212, 10%, 26%);;
+    border: none;
+    border-radius: 100px;
+    color: inherit;
+    font-weight: var(--fw-h1);
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--Medium-Grey);
+    color: white;
+}
+button.active {
+    background-color: var(--Orange);
+    color: white;
+}
+.submit {
+    width: 100%;
+    background-color: var(--Orange);
+    color: white;
+    letter-spacing: 4px;
+    font-family: inherit;
+    font-weight: var(--fw-h1);
+}
+.submit:hover {
+    background-color: white;
     color: var(--Orange);
 }
-.hidden {
+.mobile {
+    text-align: center;
     display: none;
 }
-/* thanks card */
-#thanks {
-    padding: 1rem;
+.mobile.active {
     display: grid;
-    place-items: center;
-    gap: 1rem;
-    text-align: center;
 }
-#user {
-    font-size: 1rem;
-    font-family: var(--ff);
-    color: var(--Orange);
-    background-color: hsl(215, 23%, 26%);
-    border-radius: 25px;
-    width: 200px;
-    text-align: center;
-}
-@media screen and (max-width: 375px) {
-    .card {
-        width: 90%;
-    }
+.mobile img {
+    margin: auto;
 }
